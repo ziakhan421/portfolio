@@ -28,7 +28,7 @@ html[data-theme="dark"] {
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; overflow-x: clip; }
 body {
   margin: 0;
   font-family: "Plus Jakarta Sans", system-ui, sans-serif;
@@ -36,7 +36,9 @@ body {
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
+  overflow-x: clip;
 }
+main { overflow-x: clip; }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button, input, textarea { font: inherit; }
@@ -1091,6 +1093,7 @@ html.js .reveal-right.in {
   .mini-card { padding: 10px 12px; gap: 8px; }
   .mini-card b { font-size: 1.05rem; }
   .icon-bubble { width: 38px; height: 38px; }
+  html.js .reveal-left, html.js .reveal-right { transform: translateY(28px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1107,10 +1110,14 @@ html.js .reveal-right.in {
 }
 
 @media (max-width: 640px) {
-  .wrap { width: min(1200px, calc(100% - 24px)); }
+  .wrap { width: min(1200px, calc(100% - 32px)); }
   .info-card { flex-wrap: wrap; }
   .card-cta { margin-left: 0; width: 100%; }
   .logo-text { display: none; }
   h1 { font-size: 3rem; }
-  .section { padding: 56px 0; }
+  .hero { padding: 110px 16px 56px; }
+  .section { padding: 56px 16px; }
+  .m1 { left: 12px; bottom: 12px; }
+  .m2 { right: 12px; bottom: auto; top: 12px; }
+  .mini-card span { font-size: 0.8rem; white-space: nowrap; }
 }
