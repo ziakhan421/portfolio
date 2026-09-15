@@ -612,28 +612,32 @@ html[data-theme="dark"] .eyebrow.green { background: rgba(34, 197, 94, 0.2); col
 .mini-card {
   position: absolute;
   background: var(--card);
-  border-radius: 20px;
-  padding: 14px 16px;
+  border-radius: 12px;
+  padding: 8px 12px;
   box-shadow: var(--shadow);
   display: flex;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
   z-index: 2;
   max-width: calc(50% - 12px);
+  line-height: 1.25;
 }
-.mini-card b { display: block; font-size: 1.3rem; }
-.m1 { left: 16px; bottom: 16px; animation: floaty 6s ease-in-out 0.6s infinite; }
-.m2 { right: 16px; bottom: 16px; animation: floaty 6s ease-in-out 1.4s infinite; }
+.mini-card b { display: block; font-size: 0.9rem; }
+.mini-card span:not(.icon-bubble) { display: block; font-size: 0.74rem; color: var(--muted); }
+.m1 { left: 12px; bottom: 12px; animation: floaty 6s ease-in-out 0.6s infinite; }
+.m2 { right: 12px; bottom: 12px; animation: floaty 6s ease-in-out 1.4s infinite; }
 .icon-bubble {
-  width: 46px;
-  height: 46px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   display: grid;
   place-items: center;
   color: #fff;
+  font-size: 0.85rem;
   background: linear-gradient(135deg, var(--primary), var(--primary-2));
   flex-shrink: 0;
 }
+.icon-bubble svg { width: 15px; height: 15px; }
 .icon-bubble svg,
 .svc-icon svg {
   width: 22px;
@@ -1090,9 +1094,6 @@ html.js .reveal-right.in {
   .portrait-wrap { min-height: 0; display: block; }
   .s1, .s2 { position: static; display: inline-block; margin: 10px; left: auto; right: auto; }
   .about-photo img { height: 340px; }
-  .mini-card { padding: 10px 12px; gap: 8px; }
-  .mini-card b { font-size: 1.05rem; }
-  .icon-bubble { width: 38px; height: 38px; }
   html.js .reveal-left, html.js .reveal-right { transform: translateY(28px); }
 }
 
@@ -1117,7 +1118,6 @@ html.js .reveal-right.in {
   h1 { font-size: 3rem; }
   .hero { padding: 110px 16px 56px; }
   .section { padding: 56px 16px; }
-  .m1 { left: 12px; bottom: 12px; }
-  .m2 { right: 12px; bottom: auto; top: 12px; }
-  .mini-card span { font-size: 0.8rem; white-space: nowrap; }
+  .m2 { bottom: auto; top: 12px; }
+  .mini-card { max-width: calc(70% - 12px); }
 }
