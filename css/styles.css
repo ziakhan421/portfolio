@@ -458,7 +458,8 @@ h1 {
 }
 .code-float {
   top: -70px;
-  right: -70px;
+  /* -150px overhang, shrinking only when the hero side padding can't absorb it (narrow desktops) */
+  right: calc(-1 * min(150px, max(20px, (100vw - 1200px) / 2) - 24px));
   left: auto;
   width: min(420px, 96%);
   padding: 18px 20px;
